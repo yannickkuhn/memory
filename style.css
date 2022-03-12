@@ -1,0 +1,24 @@
+body {
+    background-color: #DDA0DD;
+    width: 100%;
+}
+
+#board {
+    display: block;
+    margin-left: 12vw;
+    margin-right: 12vw;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card {
+    display: block;
+    width: 10vw;
+    height: 10vh;
+    background-color: grey;
+    margin: 1px;
+}
