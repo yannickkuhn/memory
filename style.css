@@ -5,20 +5,53 @@ body {
 
 #board {
     display: block;
-    margin-left: 12vw;
-    margin-right: 12vw;
+}
+
+.hidden {
+    display: none;
 }
 
 .cards {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     text-align: center;
+    grid-template-columns: repeat(8, 0fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
 }
 
-.card {
-    display: block;
-    width: 10vw;
-    height: 10vh;
+.card, .empty_color, .fruit {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.empty_color {
     background-color: grey;
-    margin: 1px;
+}
+
+.fruit1 {
+    background: url('cards.png') 0px 0px;
+}
+.fruit2 {
+    background: url('cards.png') 0px -100px;
+}
+.fruit3 {
+    background: url('cards.png') 0px -200px;
+}
+.fruit4 {
+    background: url('cards.png') 0px -300px;
+}
+.fruit5 {
+    background: url('cards.png') 0px -400px;
+}
+.fruit6 {
+    background: url('cards.png') 0px -500px;
+}
+.fruit7 {
+    background: url('cards.png') 0px -600px;
+}
+.fruit8 {
+    background: url('cards.png') 0px -700px;
 }
