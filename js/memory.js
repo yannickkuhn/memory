@@ -12,7 +12,9 @@ $(document).ready(function() {
 
     // le tableau réprésente les fruits sur le plateau de jeux
     let fruits = [1, 2, 3, 4, 5, 6, 7, 8, 
-                  1, 2, 3, 4, 5, 6, 7, 8];
+                  1, 2, 3, 4, 5, 6, 7, 8,
+                  9, 10, 11, 12, 13, 14, 15, 16,
+                  9, 10, 11, 12, 13, 14, 15, 16];
     let card1 = null;
     let card2 = null;
     let coups = 0;
