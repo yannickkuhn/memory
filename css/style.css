@@ -31,27 +31,27 @@ body {
     background-color: grey;
 }
 
-.fruit1 {
+#fruit1 {
     background: url('cards.png') 0px 0px;
 }
-.fruit2 {
+#fruit2 {
     background: url('cards.png') 0px -100px;
 }
-.fruit3 {
+#fruit3 {
     background: url('cards.png') 0px -200px;
 }
-.fruit4 {
+#fruit4 {
     background: url('cards.png') 0px -300px;
 }
-.fruit5 {
+#fruit5 {
     background: url('cards.png') 0px -400px;
 }
-.fruit6 {
+#fruit6 {
     background: url('cards.png') 0px -500px;
 }
-.fruit7 {
+#fruit7 {
     background: url('cards.png') 0px -600px;
 }
-.fruit8 {
+#fruit8 {
     background: url('cards.png') 0px -700px;
 }
