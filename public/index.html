@@ -7,11 +7,13 @@
     <title>Jeux de memory</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/memory.js"></script>
+    <script src="js/jquery.js" defer></script>
+    <script src="js/memory.js" defer></script>
+    <script src="js/compteur.js" defer></script>
 </head>
 <body>
     <div id="board">
+        <div id="nbcoups">Coups joués : 0 coups</div>
         <div class="cards">
             <!-- Une carte du plateau sera représenté par
                     - Un élément IMG représentant la carte retournée

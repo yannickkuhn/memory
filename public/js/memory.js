@@ -11,14 +11,14 @@ $(document).ready(function() {
     $(".empty_color").show();
 
     // le tableau réprésente les fruits sur le plateau de jeux
-    let fruits = [1, 2, 3, 4, 5, 6, 7, 8, 
+    var fruits = [1, 2, 3, 4, 5, 6, 7, 8, 
                   1, 2, 3, 4, 5, 6, 7, 8,
                   9, 10, 11, 12, 13, 14, 15, 16,
                   9, 10, 11, 12, 13, 14, 15, 16];
-    let card1 = null;
-    let card2 = null;
-    let coups = 0;
-    let gagne = false;
+    var card1 = null;
+    var card2 = null;
+    var coups = 0;
+    var gagne = false;
 
     // on trie de façon aléatoire tous les fruits avant de les affecter aux éléments de type card (html)
     fisherYatesShuffle(fruits);
@@ -40,22 +40,31 @@ $(document).ready(function() {
                 card2 = $(this);
 
                 // Vérification du contenu des 2 cartes
-                let fruit1 = card1.find(".fruit").attr("id");
-                let fruit2 = card2.find(".fruit").attr("id");
+                var fruit1 = card1.find(".fruit").attr("id");
+                var fruit2 = card2.find(".fruit").attr("id");
                 if(fruit1 == fruit2) {
-                    console.log("gagné :: " + fruit1 + " / " + fruit2)
-                    gagne = true
+                    console.log("gagné :: " + fruit1 + " / " + fruit2);
+                    gagne = true;
                 } else {
-                    console.log("perdu")
+                    console.log("perdu");
                 }
             }
             coups = coups + 1;
-        } else {
+        }
 
-            console.log("Retourne les cartes")
+        console.log("Valeur de coups : ".coups);
+    })
 
+    // Compteur
+    var secondes = 0;
+    var minutes = 0;
+    var on = false;
+   
+    function chrono() {
+        $("#nbcoups").html(coups+" coups joués !");
+        if(coups == 2) {
+            console.log("Retourne les cartes");
             coups = 0;
-
             if(gagne == false) {
                 card1.find(".empty_color").show();
                 card1.find(".fruit").hide();
@@ -63,13 +72,20 @@ $(document).ready(function() {
                 card2.find(".empty_color").show();
                 card2.find(".fruit").hide();
             }
-
             // Réinitialisation des variables
             gagne = false;
             card1 = null;
             card2 = null;
         }
-    })
+    }
+   
+    function start() {
+      if(on===false) {
+        timerID = setInterval(chrono, 2000);
+        on = true;
+      }
+    }
+    start();
 });
 
 $(document).ready(function() {
@@ -84,7 +100,7 @@ $(document).ready(function() {
     })
     // Code en cas de succès
     .then(function(response){
-        let data = JSON.stringify(response);
+        var data = JSON.stringify(response);
         console.log(data);
     })
     // Code en cas d'echec
