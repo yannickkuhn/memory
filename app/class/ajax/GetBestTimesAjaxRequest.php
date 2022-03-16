@@ -1,13 +1,13 @@
 <?php
     header('Content-Type: application/json; charset=utf-8');
 
-    class Capture {
+    class GetBestTimesAjaxRequest {
 
         private $response;
 
         public function __construct() {
             $this->response = [
-                "success" => "Bravo, vous avez réussi l'appel !"
+                "success" => "Récupération des données de meilleurs temps ok !"
             ];
         }
 
@@ -16,6 +16,3 @@
             return json_encode($this->response);
         }
     }
-
-    $capture = new Capture();
-    echo $capture->getResponse();
