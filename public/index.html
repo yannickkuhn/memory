@@ -12,149 +12,154 @@
     <script src="js/compteur.js" defer></script>
 </head>
 <body>
-    <div id="board">
-        <div id="nbcoups">Coups joués : 0 coups</div>
-        <div class="cards">
-            <!-- Une carte du plateau sera représenté par
-                    - Un élément IMG représentant la carte retournée
-                    - Un élement IMG repésentant un fruit 
-                        (une fonction JS affectera une variante de fruit aléatoirement au lancement)    
-            -->
-            <div class="card">
-                <img class="empty_color hidden">
-                <img class="fruit">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
+    <div id="centered-text">
+        <h1>Jeux de mémoire</h1>
+    </div>
+    <div id="center">
+        <div id="board">
+            <div class="cards">
+                <!-- Une carte du plateau sera représenté par
+                        - Un élément IMG représentant la carte retournée
+                        - Un élement IMG repésentant un fruit 
+                            (une fonction JS affectera une variante de fruit aléatoirement au lancement)    
+                -->
+                <div class="card">
+                    <img class="empty_color hidden">
+                    <img class="fruit">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
 
-            <!-- Deuxième ligne -->
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
+                <!-- Deuxième ligne -->
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
 
-            <!-- Troisième ligne -->
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
+                <!-- Troisième ligne -->
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
 
-            <!-- Quatrième ligne -->
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
-            </div>
-            <div class="card">
-                <img class="empty_color">
-                <img class="fruit hidden">
+                <!-- Quatrième ligne -->
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
+                <div class="card">
+                    <img class="empty_color">
+                    <img class="fruit hidden">
+                </div>
             </div>
         </div>
+        <progress value="70" max="100">70 %</progress>
     </div>
 </body>
 </html>
