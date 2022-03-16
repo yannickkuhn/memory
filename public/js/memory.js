@@ -10,6 +10,10 @@ $(document).ready(function() {
     $(".fruit").hide();
     $(".empty_color").show();
 
+    // Temps maximum du jeux (en secondes)
+    var maxTime = 300 // 5min
+    var time = 0
+
     // le tableau réprésente les fruits sur le plateau de jeux
     var fruits = [1, 2, 3, 4, 5, 6, 7, 8, 
                   1, 2, 3, 4, 5, 6, 7, 8,
@@ -60,8 +64,8 @@ $(document).ready(function() {
     var minutes = 0;
     var on = false;
    
-    function chrono() {
-        $("#nbcoups").html(coups+" coups joués !");
+    function retourneCartes() {
+        //$("#nbcoups").html(coups+" coups joués !");
         if(coups == 2) {
             console.log("Retourne les cartes");
             coups = 0;
@@ -78,10 +82,17 @@ $(document).ready(function() {
             card2 = null;
         }
     }
+    function chrono() {
+        console.log("Valeur de time : "+time)
+        time = time + 1;
+        var valueProgress = time / maxTime * 100;
+        $("progress").attr("value", valueProgress);
+    }
    
     function start() {
       if(on===false) {
-        timerID = setInterval(chrono, 2000);
+        setInterval(retourneCartes, 3000);
+        setInterval(chrono, 1000);
         on = true;
       }
     }
