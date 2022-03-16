@@ -91,7 +91,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $.ajax({
         //L'URL de la requête 
-        url: "capture.php",
+        url: "../app/capture.php",
         cache: false,
         //La méthode d'envoi (type de requête)
         method: "GET",
