@@ -2,6 +2,10 @@
 
 namespace Entity;
 
+// Représentation d'un objet Times 
+// Cette classe servira à accueillir un enregistrement
+// provenant de la base de données (dans la table Times)
+
 class Times {
 
     public $id;
