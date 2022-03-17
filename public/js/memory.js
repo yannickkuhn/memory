@@ -83,7 +83,7 @@ $(document).ready(function() {
         }
     }
     function chrono() {
-        console.log("Valeur de time : "+time)
+        //console.log("Valeur de time : "+time)
         time = time + 1;
         var valueProgress = time / maxTime * 100;
         $("progress").attr("value", valueProgress);
@@ -100,22 +100,6 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    $.ajax({
-        //L'URL de la requête 
-        url: "../app/capture.php",
-        cache: false,
-        //La méthode d'envoi (type de requête)
-        method: "GET",
-        //Le format de réponse attendu
-        dataType : "json",
-    })
-    // Code en cas de succès
-    .then(function(response){
-        var data = JSON.stringify(response);
-        console.log(data);
-    })
-    // Code en cas d'echec
-    .catch(function(error){
-        console.log("La requête s'est terminée en échec. Infos : " + JSON.stringify(error));
-    })
+    $.fn.getbesttimes();
+    $.fn.savetime("00:01:22");
 });
