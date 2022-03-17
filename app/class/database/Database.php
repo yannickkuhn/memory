@@ -31,12 +31,6 @@ class Database {
         return $this->pdo;
     }
 
-    /*public function query($statement) {
-        $req = $this->getPDO()->query($statement);
-        $datas = $req->fetchAll(PDO::FETCH_OBJ);
-        return $datas;
-    }*/
-
     public function query($statement, $class) {
         $req = $this->getPDO()->query($statement);
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $class);

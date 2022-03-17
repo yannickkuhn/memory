@@ -7,7 +7,7 @@
     // test d'insertion d'un élement dans la base de données
 
     $db = new Database('memory');
-    $data = $db->query("SELECT * FROM times", 'Entity\Times');
+    $data = $db->query("SELECT * FROM times ORDER BY time ASC LIMIT 0,3", 'Entity\Times');
 
     $dataCount = count($data);
 
