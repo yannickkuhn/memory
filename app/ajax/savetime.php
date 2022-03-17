@@ -4,7 +4,7 @@
 // Fichier récupéré : JSON
 
 header('Content-Type: application/json; charset=utf-8');
-require_once("../class/ajax/SaveTimeService.php");
+require_once("../class/service/SaveTimeService.php");
 
 $db_name = "memory";
 $saveTime = new SaveTimeService($db_name);
