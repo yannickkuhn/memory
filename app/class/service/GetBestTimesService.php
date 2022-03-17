@@ -6,13 +6,13 @@
     use App\Database;
     use Entity\Times;
 
-    class GetBestTimesAjaxRequest {
+    class GetBestTimesService {
 
         private $response;
         private $db;
 
-        public function __construct() {
-            $this->db = new Database('memory');
+        public function __construct($db_name) {
+            $this->db = new Database($db_name);
         }
 
         public function getResultsFromDb() {

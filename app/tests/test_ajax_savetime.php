@@ -4,6 +4,9 @@
 // Fichier récupéré : JSON
 
 header('Content-Type: application/json; charset=utf-8');
-require_once("../class/ajax/SaveTimeAjaxRequest.php");
-$saveTime = new SaveTimeAjaxRequest();
+require_once("../class/ajax/SaveTimeService.php");
+
+$db_name = "memory";
+$saveTime = new SaveTimeService($db_name);
+$saveTime->sendRequest("00:02:09");
 echo $saveTime->getResponse();
