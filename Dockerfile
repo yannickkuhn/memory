@@ -23,8 +23,10 @@ COPY docker/conf/apache.conf /etc/apache2/conf-available/z-app.conf
 
 # Apache - App (src)
 COPY app /app/app
-COPY public /app/public
-COPY index.html /app/index.html
+COPY --chown=www-data:www-data public /app/public
+COPY --chown=www-data:www-data index.html /app/index.html
+
+RUN chmod -R 765 /app
 
 RUN a2enmod rewrite remoteip && \
     a2enconf z-app
