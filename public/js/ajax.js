@@ -41,7 +41,15 @@ $(function () {
         // Code en cas de succès
         .then(function(response){
             var data = JSON.stringify(response);
-            console.log(data);
+
+            var alertData = "";
+
+            alertData = "Meilleurs temps effectués :\n";
+            $.each(response, function(i, time) {
+                alertData += `[${i+1}] Le ${time.date}, temps : ${time.time}\n`;
+            });
+
+            alert(alertData)
         })
         // Code en cas d'echec
         .catch(function(error){

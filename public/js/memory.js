@@ -10,6 +10,9 @@ $(document).ready(function() {
     $(".fruit").hide();
     $(".empty_color").show();
 
+    // Chargement des meilleurs temps au démarrage
+    $.fn.getbesttimes();
+
     // Temps maximum du jeux (en secondes)
     var maxTime = 300 // 5min
     var time = 0
@@ -23,6 +26,9 @@ $(document).ready(function() {
     var card2 = null;
     var coups = 0;
     var gagne = false;
+
+    // Variable contenant le nombre de carte restantes
+    var hideCards = fruits.length
 
     // on trie de façon aléatoire tous les fruits avant de les affecter aux éléments de type card (html)
     fisherYatesShuffle(fruits);
@@ -47,25 +53,37 @@ $(document).ready(function() {
                 var fruit1 = card1.find(".fruit").attr("id");
                 var fruit2 = card2.find(".fruit").attr("id");
                 if(fruit1 == fruit2) {
-                    console.log("gagné :: " + fruit1 + " / " + fruit2);
+                    console.log("coup gagné :: " + fruit1 + " / " + fruit2);
                     gagne = true;
+                    hideCards = hideCards - 2   // mise à jour du compteur de cartes restantes
                 } else {
-                    console.log("perdu");
+                    console.log("coup perdu");
                 }
             }
             coups = coups + 1;
         }
-
-        console.log("Valeur de coups : ".coups);
     })
 
     // Compteur
     var secondes = 0;
     var minutes = 0;
     var on = false;
+
+    var rcInterval = null;
+    var chronoInterval = null;
+
+    function start() {
+        if(on===false) {
+            // Relance de la fonction retourneCartes toutes les 2 secondes
+            rcInterval = setInterval(retourneCartes, 2000);  
+            // Relance du chrono toutes les secondes
+            chronoInterval = setInterval(chrono, 1000);
+            on = true;
+        }
+    }
+    start();
    
     function retourneCartes() {
-        //$("#nbcoups").html(coups+" coups joués !");
         if(coups == 2) {
             console.log("Retourne les cartes");
             coups = 0;
@@ -87,19 +105,19 @@ $(document).ready(function() {
         time = time + 1;
         var valueProgress = time / maxTime * 100;
         $("progress").attr("value", valueProgress);
-    }
-   
-    function start() {
-      if(on===false) {
-        setInterval(retourneCartes, 3000);
-        setInterval(chrono, 1000);
-        on = true;
-      }
-    }
-    start();
-});
 
-$(document).ready(function() {
-    $.fn.getbesttimes();
-    $.fn.savetime("00:01:22");
+        if(valueProgress == 100) {
+            alert("Vous avez perduuuuuuuuuuuuuu !")
+            clearInterval(chronoInterval);
+        }
+
+        if(hideCards == 0) {
+            alert("Vous avez gagnéééééééééé !");
+            clearInterval(chronoInterval);
+            hideCards = -1
+
+            const passtime = new Date(time * 1000).toISOString().slice(11, 19);
+            $.fn.savetime(passtime);
+        }
+    }
 });
