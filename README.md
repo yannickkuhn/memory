@@ -16,7 +16,7 @@ docker-compose up --build
 Une fois le serveur lancé (3 instances) :   
 Il faut lancer l'URL : http://localhost:8080/app/migrations/CreateTable.php pour créer la table dans la base de données qui s'appelle "memory".   
 On peut vérifier la bonne exécution du script en se connectant sur PHPMYADMIN (voir identifiants dans le fichier docker-compose.yml). URL à taper : http://localhost:8000/.
-Enfin, on peut lancer l'application memory : http://localhost:8000/public/index.html
+Enfin, on peut lancer l'application memory : http://localhost:8080/public/index.html
 
 # BUILD D'IMAGE (SIMPLE)
 
